@@ -7,6 +7,7 @@ class dustbin
 		this.dustbinWidth=200;
 		this.dustbinHeight=213;
 		this.wallThickness=20;
+		this.image=loadImage("dustbingreen.png"); 
 		
 		this.bottomBody=Bodies.rectangle(this.x, this.y, this.dustbinWidth, this.wallThickness, {isStatic:true})
 		this.leftWallBody=Bodies.rectangle(this.x-this.dustbinWidth/2, this.y-this.dustbinHeight/2, this.wallThickness, this.dustbinHeight, {isStatic:true})
@@ -25,7 +26,7 @@ class dustbin
 			var posBottom=this.bottomBody.position;
 			var posLeft=this.leftWallBody.position;
 			var posRight=this.rightWallBody.position;
-
+				image(this.image, 1000, 350);
 			
 
 			push()
@@ -33,9 +34,9 @@ class dustbin
 			rectMode(CENTER)
 			strokeWeight(4);
 			angleMode(RADIANS)
+			imageMode(CENTER);
 			fill(255)
 			rotate(this.angle)
-			rect(0,0,this.wallThickness, this.dustbinHeight);
 			pop()
 
 			push()
@@ -44,8 +45,8 @@ class dustbin
 			strokeWeight(4);
 			angleMode(RADIANS)
 			fill(255)
-			rotate(-1*this.angle)
-			rect(0,0,this.wallThickness, this.dustbinHeight);
+			rotate(-1*this.angle) 
+
 			pop()
 
 			push()
@@ -54,7 +55,7 @@ class dustbin
 			strokeWeight(4);
 			angleMode(RADIANS)
 			fill(255)
-			rect(0,0,this.dustbinWidth, this.wallThickness);
+
 			pop()
 			
 	}
